@@ -1,0 +1,100 @@
+What is Kubernetes?
+
+K8s is an open-source container-orchestration engine or a container management	 tool , it automates deploying , scaling and managing containerized application
+
+K8s 
+
+Google - > Cloud Native Computing Foundation
+
+Developed using Go lang
+
+Management includes 
+
+  Deploying 
+  Scheduling
+  Scaling
+  Load balancing
+  Batch Execution
+  Roll Back
+  Monitoring
+
+Kubernetes Components
+
+1. Pod-
+   Pod is a group of containerized applications
+
+2. Node
+   - a group of pods are called a node , there can exist multiple nodes hence one master node will monitor
+     all worker nodes
+
+3. Cluster
+   - a groups of nodes form a cluster
+
+4. Replication Controller Replica set
+   - When ever a pod is down a clone of the app maintained in the replication set takes the place of the 
+     broken pod on a new ip address
+
+5. Service
+   since replica pods may take new ips when hosted, the pods intercommunicating may face a challenge
+   hence service component of k8s establishes communication through DNS and hence changing ips do not cause 
+   problem , Servcie is also responsible for loadbalancing between scaled pod instances to manage
+   incoming traffic
+   
+6. Deployment
+    - Deployement are k8s objects that are used for managing pods
+    - an app can be scalled by increaasing the number of running pods or update the running app using 
+      deployment object.
+      
+      kuberctl create deployment first-deployment - image=<Docker_Image_name> --port --replicas=4
+
+7. Secrets
+    -
+    -encrpted text - encrypted secrets
+
+8. Config Map
+    config map     - plaintext
+
+9. ETCD(Editable Text Configurations Distributed)
+
+   K8s uses etcd as a key-value database store. It stores the configuration of the k8s cluster in etcd
+   It store all the secret and configMap data inside etcd database
+   
+   Max limit is 1MB to store secrets
+   
+ ----------------------------------------------------
+ 
+ Master Node 
+ 1. will monitor all worker node for seamless running
+ 2. monitors all pods to be working
+ 3. if any pods are down in a node immediately assign a clone pod with new IP
+ 4. If any node is down it immidiately it will tag pods to a new node .
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
