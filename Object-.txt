@@ -1,0 +1,24 @@
+Object-
+--------
+
+Object is a realtime entity which has its own states and behaviour
+
+
+Class-
+-------
+
+
+class is a java definition block which defines the states and behaviour of an object / Blue print of an object
+
+class A
+{
+   declare and initialize static, non static data members
+
+   declare and define static and non static methods
+
+   constructor
+
+   blocks
+
+  
+}

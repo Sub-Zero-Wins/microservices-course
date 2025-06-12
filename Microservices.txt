@@ -1,0 +1,278 @@
+Microservices
+---------------
+
+Monolithic-
+ single - layer architecture design for your rest API
+ where a single project is handling all requests for your application and a single database.
+
+
+Drawbacks
+----------
+
+1. reduced/inefficient scalablility
+2. Single Point of failure
+3. single technology
+4. increased Complexity
+5. Development cycles are slower
+
+
+When To go For Monolithic
+---------------------------
+1. For simple application
+2. Not enough Domain Knowledge
+3. Low Cost 
+4. prototype/mvp
+5. scalability needs are limited
+6. less teammates
+
+
+Microservices:
+
+ is an architectural style of building applications where we create multiple projects segregating them
+ based on their responsibility, this was was introduced in 2011 by Martin Fowler.
+
+Advantages:
+------------
+
+1. better scalability
+2. technology agnostic/flexible
+3. no single point of failure
+4. faster development
+5. distributed load
+6. enhanced fault isolation/ improved system resilience
+
+Drabacks of Microservices
+-------------------------
+1. Latency
+2. cost (developent,infastructures,maintainance)
+3. increased complexity
+
+
+When To go For Microservices
+---------------------------
+1. For complex application
+2.  enough Domain Knowledge
+3. high Cost 
+5. scalability needs are high
+6. large team
+7. ci cd is crucial
+------------------------------------------------------------------
+
+Communication Between Micro services
+-------------------------------------
+
+
+1. Synchronous Communication
+
+    Synchronous communication is where multiple tasks get executed one after the other in a sequential blocking fashion where each task waits for the other to complete irrespective of the time taken
+
+  used in scenarios where one task depends on the other tasks result for execution
+
+ example: Rest Template , Feign Client  etc.
+
+2. Asynchronous Communication
+    Synchronous communication is where multiple tasks get executed concurrently in a non blocking fashion where tasks with different times of execution do not waits for the others to complete 
+
+  used in scenarios where one tasks are independent on the other tasks result for execution.
+
+ example Messagaing Queues like Rabbit MQ, KAFKA etc.
+ 
+
+
+Fault Tolerance / Resiliance
+------------------------------
+
+Cascading Failure/dominos effect:
+In most systems where multiple microservices are communicating with each other and if one micro service fails , then the remaining microservices that are called before it also fail due to cascading effect / failure , this results in entire system collapsing / services go down.
+
+
+Fault Tolerance/resiliance:
+The ability of the system to recover from faults that are caused due to faulty services is called fault tolerance or resilience as described above.
+
+
+2 Libraries available for doing this 
+
+a. Hystrix
+b. Resiliance 4j
+
+
+
+Feign Client in Spring Cloud
+-----------------------------
+
+
+
+What is feign?
+- Feign is a  declarative web service client developed by Netflix
+- It simplifies HTTP API client in java by abstracting REST calls behind simple java interfaces.
+- Spring Cloud Integrates Feign to work seamlessly with Eureka,hystrix,Resiliance4j etc
+
+Key Features
+-------------
+
+- Declarative Syntax for calling REST APIs
+- Supports LoadBalancing
+- Supports FaultTolerance
+-Reduces Boilerplate code compared to using RestTemplate or WebClient
+
+
+
+
+Advantages
+---------------
+
+Cleaner, readable code
+Reduced boilerplate
+Native Support for service discovery
+easy to plugin fallback mechanism
+
+
+Best Practices
+--------------
+- Avoid hardcoding url in @feignClient , use name and let eureka discover
+- use DTOS to avoid tight coupling with other services
+
+
+
+
+Distributed Tracing
+--------------------
+
+ what is distributed tracing?
+
+- Distributed tracing tracks requests across microservices
+
+- Helps in debugging, performance monitoring and latency 
+
+- micrometer/Prometheus/actuator adds tracing information (like trace ID,span ID) to logs
+
+- Zipkin collects and visualized these traces in a web UI
+
+
+
+Asynchronous Communication
+---------------------------
+
+@Asynchronous
+
+WebClient
+----------------------
+
+kafka - Messaging Broker
+-------------------------
+
+What is Kafka?
+
+Apache Kafka is an open-source distributed event streaming platform
+
+- creating real time stream
+- processing real time stream
+
+
+Kafka Components
+-----------------
+
+-Producer
+-Consumer/subscriber
+-Broker - (KAFKA)
+-Cluster -(KAFKA BROKER GROUP)
+-Topic -(TOPIC OF MESSAGES LIKE PAYMENT,ORDER,NOTIFICATION ETC)
+-Partitions- (DIVISION INSIDE TOPICS)
+-Offset-(INDEX OF MESSAGES)
+-Consumer Groups
+-Zookeeper(SERVICE DISCOVERY AND MANAGEMENT/COORDINATION OF ALL KAFKA ACTIVITIES)
+
+
+
+
+Kafka Installation
+------------------
+
+Open Source : Apache Kafka
+
+Commercial Distribution : Confluent Kafka
+
+managed Kafka Service : confluent & AWS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

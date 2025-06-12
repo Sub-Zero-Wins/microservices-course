@@ -1,0 +1,47 @@
+Zookeeper: 2181
+Kafka: 9092
+
+Open a terminal, navigate to the Kafka directory:
+
+
+cd C:\kafka
+Start Zookeeper:
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+Open another terminal, navigate to the Kafka directory:
+
+
+cd C:\kafka
+Start the Kafka broker:
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+	Stop Kafka
+
+.\bin\windows\kafka-server-stop.bat
+
+Stop Zookeeper
+
+.\bin\windows\zookeeper-server-stop.bat
+
+Test Kafka Installation
+
+Create a Topic:
+
+
+.\bin\windows\kafka-topics.bat --create --topic test-topic --bootstrap-server localhost:9092
+
+List Topics:
+
+
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+Start a Producer:
+
+
+.\bin\windows\kafka-console-producer.bat --topic test-topic --bootstrap-server localhost:9092
+
+Start a Consumer: Open another terminal and run:
+
+.\bin\windows\kafka-console-consumer.bat --topic test-topic --from-beginning --bootstrap-server localhost:9092
